@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WebVTT API Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Content/WebSharper.WebVTT.Sample.css" />
+    <style>
+        /* Don't show the not-yet-loaded templates */
+        [ws-template], [ws-children-template] { display: none; }
+    </style>
+    <script type="module" src="Content/WebSharper.WebVTT.Sample.head.js"></script>
+</head>
+<body>
+    <h1>WebVTT API</h1>
+    <div id="main" ws-children-template="Main">
+        <div ws-onafterrender="init">
+            <video id="video" controls width="600">
+                <source src="sample.mp4" type="video/mp4">
+            </video>
+
+            <p><strong>Current Subtitle:</strong> <span id="currentCaption">${Subtitles}</span></p>
+        </div>
+    </div>
+    <script type="module" src="Content/WebSharper.WebVTT.Sample.min.js"></script>
+</body>
+</html>
