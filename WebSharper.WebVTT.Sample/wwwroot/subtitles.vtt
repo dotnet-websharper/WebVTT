@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:02.000
+Welcome to our video tutorial!
+
+00:00:03.000 --> 00:00:05.000
+Here, we will learn about the WebVTT API.
+
+00:00:05.000 --> 00:00:07.000
+WebVTT is used for subtitles, captions, and metadata in HTML5 videos.

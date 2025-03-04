@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "WebSharper.WebVTT.Sample": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:59692;http://localhost:59693"
+    }
+  }
+}
