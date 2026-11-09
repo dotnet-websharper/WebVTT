@@ -66,7 +66,7 @@ module Definition =
         ]
         |+> Instance [
             "region" =@ VTTRegion 
-            "vertical" =@ T<string> 
+            "vertical" =@ Enum.VTTCueVertical 
             "snapToLines" =@ T<bool>
             "line" =@ T<string> + T<float>
             "lineAlign" =@ Enum.VTTCueLineAlign 
@@ -84,13 +84,14 @@ module Definition =
         |+> Instance [
             "length" =? T<int> 
             "getCueById" => T<string>?id ^-> VTTCue
+            "" =@ VTTCue |> Indexed T<int>
         ]
 
     let TextTrack =
         Class "TextTrack"
         |=> Inherits T<EventTarget> 
         |+> Instance [
-            "activeCues" =? !|VTTCue
+            "activeCues" =? TextTrackCueList
             "cues" =? TextTrackCueList
             "id" =? T<string>
             "inBandMetadataTrackDispatchType" =? T<string>
@@ -133,7 +134,7 @@ module Definition =
         Pattern.Config "TrackEventInit" {
             Required = []
             Optional = [
-                "track", T<obj> 
+                ("track", T<obj>)
             ]
         }
 
