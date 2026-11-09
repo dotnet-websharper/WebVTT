@@ -103,12 +103,11 @@ module Client =
             trackStatus.Value <- "This browser does not support the WebVTT API."
             currentCaption.Value <- "WebVTT is unavailable in this browser."
 
-        IndexTemplate.Main()
+        IndexTemplate()
             .VideoAttrs(Attr.OnAfterRender(fun el -> setupVideo (el |> As<HTMLVideoElement>)))
             .caption(currentCaption.V)
             .trackCount(trackCount.V)
             .trackStatus(trackStatus.V)
             .lastEvent(lastEvent.V)
             .playCue(fun _ -> playProgrammaticCue())
-            .Doc()
-        |> Doc.RunById "main"
+            .Bind()
